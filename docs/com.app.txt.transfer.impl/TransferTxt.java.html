@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TransferTxt.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Numbers_converter</a> &gt; <a href="index.source.html" class="el_package">com.app.txt.transfer.impl</a> &gt; <span class="el_source">TransferTxt.java</span></div><h1>TransferTxt.java</h1><pre class="source lang-java linenums">package com.app.txt.transfer.impl;
+
+import com.app.parser.LineParser;
+import com.app.txt.transfer.Transfer;
+import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.function.Function;
+
+
+/**
+ * The type Transfer txt.
+ *
+ * @param &lt;T&gt; the type parameter
+ */
+<span class="fc" id="L20">@RequiredArgsConstructor</span>
+public class TransferTxt&lt;T&gt; implements Transfer&lt;T&gt; {
+
+    @Override
+<span class="fc" id="L24">    @SneakyThrows</span>
+    public List&lt;T&gt; read(String filename, LineParser&lt;T&gt; lineParser) {
+
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if(filename == null){</span>
+<span class="fc" id="L28">            throw new IllegalArgumentException(&quot;Filename is null&quot;);</span>
+        }
+
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if(lineParser == null){</span>
+<span class="fc" id="L32">            throw new IllegalArgumentException(&quot;Line parser is null&quot;);</span>
+        }
+
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if(filename.isEmpty()){</span>
+<span class="fc" id="L36">            throw new IllegalArgumentException(&quot;Filename is empty&quot;);</span>
+        }
+
+<span class="fc" id="L39">         try (var lines = Files.lines(Paths.get(filename))){</span>
+
+<span class="fc" id="L41">           return  lines</span>
+<span class="fc" id="L42">                   .map(lineParser::parse)</span>
+<span class="fc" id="L43">                   .toList();</span>
+        }
+    }
+
+    @Override
+<span class="fc" id="L48">    @SneakyThrows</span>
+    public void write( String filename,T t, Function&lt;T, String&gt; prepare) {
+
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if(t == null){</span>
+<span class="fc" id="L52">            throw new IllegalArgumentException(&quot;T is null&quot;);</span>
+        }
+
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if(prepare == null){</span>
+<span class="fc" id="L56">            throw new IllegalArgumentException(&quot;Function is null&quot;);</span>
+        }
+
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if(filename == null){</span>
+<span class="fc" id="L60">            throw new IllegalArgumentException(&quot;Filename is null&quot;);</span>
+        }
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if(filename.isEmpty()){</span>
+<span class="fc" id="L63">            throw new IllegalArgumentException(&quot;Filename is empty&quot;);</span>
+        }
+
+<span class="fc" id="L66">        try (var fw = new FileWriter(filename); var pw = new PrintWriter(fw)){</span>
+
+<span class="fc" id="L68">            pw.println(prepare.apply(t));</span>
+        }
+<span class="fc" id="L70">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

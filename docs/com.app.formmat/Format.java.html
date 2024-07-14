@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Format.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Numbers_converter</a> &gt; <a href="index.source.html" class="el_package">com.app.formmat</a> &gt; <span class="el_source">Format.java</span></div><h1>Format.java</h1><pre class="source lang-java linenums">package com.app.formmat;
+
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+
+/**
+ * The type Format.
+ */
+<span class="fc" id="L10">@RequiredArgsConstructor</span>
+<span class="pc bpc" id="L11" title="11 of 18 branches missed.">@EqualsAndHashCode</span>
+<span class="fc" id="L12">@ToString</span>
+public class Format {
+
+    private final int entrySystemCode;
+    private final int expectedSystemCode;
+    private final String code;
+
+
+
+    /**
+     * Is correct format boolean.
+     *
+     * @return the boolean
+     */
+    public boolean validateFormat(){
+
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        for(var bit : code.toCharArray()){</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">            if(Character.getNumericValue(bit) &gt;= entrySystemCode){</span>
+<span class="fc" id="L30">                return false;</span>
+            }
+        }
+<span class="fc" id="L33">        return true;</span>
+    }
+
+    /**
+     * Is duplicated boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isDuplicated(){
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        return entrySystemCode == expectedSystemCode;</span>
+    }
+
+    /**
+     * Transform code string.
+     *
+     * @return the string
+     */
+    public String transformCode(){
+
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if(isDuplicated()){</span>
+<span class="fc" id="L53">            return code;</span>
+        }
+
+<span class="fc" id="L56">        return Integer</span>
+<span class="fc" id="L57">                .toString(</span>
+                        Integer.parseInt
+<span class="fc" id="L59">                                (code, entrySystemCode), expectedSystemCode);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
