@@ -122,24 +122,27 @@ Provides method:
 
 ### Prerequisites
 
-- Java Development Kit (JDK) 11 or higher
+- Java Development Kit (JDK) 22
 - A Java IDE or text editor (e.g., IntelliJ IDEA, Eclipse, VSCode)
 
-### Installation
 
-Clone the repository:
+### Cloning the repository:
 
-```bash
-git clone https://github.com/yourusername/number-system-converter.git
-cd number-system-converter
-Open the Project
-Open the project in your preferred Java IDE.
+```Bash
+git clone https://github.com/JacobNatural/Numbers_Converter.git
+cd Numbers_Converter
+```
+### Building the project using Maven:
 
-Usage
-Each component is organized in its respective package within the src directory. Here's how you can interact with the application:
 
-Run the Application:
-Open App.java and execute its main method to launch the converter.
+```Bash
+mvn clean install
+```
+### Running the application:
+```Bash
+cd target  
+java --enable-preview -jar numbers_converter-1.0.jar
+```
 
 Integrate into Your Project:
 Import the necessary packages (format, parser, repository, txt, transfer, type, validate) into your Java project.

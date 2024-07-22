@@ -11,22 +11,37 @@ import com.app.type.Type;
 import com.app.validate.impl.FormatValidator;
 
 import java.net.URISyntaxException;
-import java.nio.file.Paths;
-import java.util.Objects;
+
 
 public class App {
     public static void main(String[] args) throws URISyntaxException {
 
-        var filename = Objects.requireNonNull(App.class.getResource("/data.txt")).toURI();
-        var formatValidator = new FormatValidator();
-        var formatLineParser = new FormatLineParser("[2-9] [2-9] [0-9]+", formatValidator);
-        var transferTxt = new TransferTxt<Format>();
-        var formatTxtLoad = new FormatTxtLoadImpl(transferTxt, formatLineParser);
-        var formatRepository = new FormatRepositoryImpl(Paths.get(filename).toString(),formatTxtLoad);
-        var formatService = new FormatServiceImpl(formatRepository);
-        formatService.saveTransformToTxt("transformed.txt", new StringTxtSaveImpl(new TransferTxt<>()), Type.TRANSFORMED);
-        formatService.saveTransformToTxt("duplicated.txt", new StringTxtSaveImpl(new TransferTxt<>()), Type.DUPLICATED);
+        // FILENAME
+        var filename = "data.txt";
 
+        // VALIDATE
+        var formatValidator = new FormatValidator();
+
+        // PARSER
+        var formatLineParser = new FormatLineParser("[2-9] [2-9] [0-9]+", formatValidator);
+
+        // LOAD FROM TXT
+        var transferFromTxt = new TransferTxt<Format>();
+        var formatTxtLoad = new FormatTxtLoadImpl(transferFromTxt, formatLineParser);
+
+        // SAVE TO TXT
+        var transferToTxt = new TransferTxt<String>();
+        var stringTxtSave = new StringTxtSaveImpl(transferToTxt);
+
+        // REPOSITORY
+        var formatRepository = new FormatRepositoryImpl(filename,formatTxtLoad);
+
+        // FORMAT SERVICE
+        var formatService = new FormatServiceImpl(formatRepository);
+
+        // FILE PROCESSING WITH SAVE TO TXT
+        formatService.saveTransformToTxt("transformed.txt", stringTxtSave, Type.TRANSFORMED);
+        formatService.saveTransformToTxt("duplicated.txt", stringTxtSave, Type.DUPLICATED);
 
     }
 }
