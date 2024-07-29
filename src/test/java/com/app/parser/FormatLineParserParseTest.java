@@ -1,7 +1,7 @@
 package com.app.parser;
 
 import com.app.extension.parser.FormatLineParserExtension;
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.parser.impl.FormatLineParser;
 import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.Assertions;

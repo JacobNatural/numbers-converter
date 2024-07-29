@@ -1,6 +1,6 @@
 package com.app.app;
 
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.formmat_service.impl.FormatServiceImpl;
 import com.app.parser.impl.FormatLineParser;
 import com.app.repository.impl.FormatRepositoryImpl;
@@ -10,11 +10,25 @@ import com.app.txt.save.impl.StringTxtSaveImpl;
 import com.app.type.Type;
 import com.app.validate.impl.FormatValidator;
 
-import java.net.URISyntaxException;
-
-
+/**
+ * Represents the main entry point of the application.
+ *
+ * This class is responsible for :
+ * - defining filename and format validator
+ * - setting up the parser with a regular expression and the validator
+ * - initializing format loading from TXT file, and saving procedures to TXT file
+ * - initializing the format repository with the filename and the formatTxtLoad object
+ * - initializing the format service with the above initialized format repository
+ * And finally, calling the save transform to TXT method from the format service
+ */
 public class App {
-    public static void main(String[] args) throws URISyntaxException {
+
+    /**
+     * The main method of the program.
+     *
+     * @param args command-line arguments. No usage of command-line arguments in current implementation.
+     */
+    public static void main(String[] args){
 
         // FILENAME
         var filename = "data.txt";

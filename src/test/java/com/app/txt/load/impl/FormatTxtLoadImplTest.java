@@ -1,7 +1,7 @@
 package com.app.txt.load.impl;
 
 import com.app.extension.txt.load.FormatTxtLoadImplExtension;
-import com.app.formmat.Format;
+import com.app.format.Format;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;

@@ -1,7 +1,7 @@
 package com.app.format_service.impl;
 
 import com.app.data_provider.Data_Provider;
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.formmat_service.impl.FormatServiceImpl;
 import com.app.repository.impl.FormatRepositoryImpl;
 import com.app.txt.save.impl.StringTxtSaveImpl;

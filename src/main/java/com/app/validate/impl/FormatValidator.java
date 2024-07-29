@@ -1,14 +1,18 @@
 package com.app.validate.impl;
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.validate.Validator;
 
-
+/**
+ * Represents an implementation of the Validator interface for validating formats.
+ */
 public class FormatValidator implements Validator<Format> {
+
     /**
-     * The constant DEFAULT_REGEX.
+     * Validates a format. Returns an error message if validation fails, null otherwise.
+     *
+     * @param format the format to validate
+     * @return an error message if the format validation fails, null otherwise
      */
-
-
     @Override
     public String validate(Format format) {
 

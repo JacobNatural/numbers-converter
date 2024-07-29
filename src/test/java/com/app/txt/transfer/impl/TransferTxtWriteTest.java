@@ -2,7 +2,7 @@ package com.app.txt.transfer.impl;
 
 import com.app.extension.format.FormatExtension;
 import com.app.extension.txt.transfer.TransferTxtExtension;
-import com.app.formmat.Format;
+import com.app.format.Format;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;

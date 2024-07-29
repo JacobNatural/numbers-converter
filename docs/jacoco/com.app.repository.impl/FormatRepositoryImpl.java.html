@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FormatRepositoryImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Numbers_converter</a> &gt; <a href="index.source.html" class="el_package">com.app.repository.impl</a> &gt; <span class="el_source">FormatRepositoryImpl.java</span></div><h1>FormatRepositoryImpl.java</h1><pre class="source lang-java linenums">package com.app.repository.impl;
+
+import com.app.format.Format;
+import com.app.repository.Repository;
+import com.app.txt.load.LoadFromTxt;
+
+import java.util.List;
+
+/**
+ * Implementation of the Repository interface for the Format class.
+ */
+public class FormatRepositoryImpl implements Repository&lt;Format&gt; {
+
+    private final List&lt;Format&gt; formats;
+
+    /**
+     * Constructor loads formats data from a txt file
+     *
+     * @param filename the name of the txt file from which format data are loaded
+     * @param load object of class implementing LoadFromTxt interface
+     */
+<span class="fc" id="L22">    public FormatRepositoryImpl(String filename, LoadFromTxt&lt;Format&gt; load){</span>
+<span class="fc" id="L23">        this.formats = load.load(filename);</span>
+<span class="fc" id="L24">    }</span>
+
+    /**
+     * Retrieves all format data.
+     *
+     * @return List of format data
+     */
+    @Override
+    public List&lt;Format&gt; getAll() {
+<span class="fc" id="L33">        return formats;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

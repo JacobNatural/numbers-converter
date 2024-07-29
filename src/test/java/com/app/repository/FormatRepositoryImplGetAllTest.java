@@ -1,7 +1,7 @@
 package com.app.repository;
 
 import com.app.extension.repository.FormatRepositoryImplExtension;
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.repository.impl.FormatRepositoryImpl;
 import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.Assertions;

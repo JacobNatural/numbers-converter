@@ -1,30 +1,33 @@
 package com.app.repository.impl;
 
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.repository.Repository;
 import com.app.txt.load.LoadFromTxt;
-import lombok.ToString;
 
 import java.util.List;
 
-
 /**
- * The type Format repository.
+ * Implementation of the Repository interface for the Format class.
  */
 public class FormatRepositoryImpl implements Repository<Format> {
 
     private final List<Format> formats;
 
     /**
-     * Instantiates a new Format repository.
+     * Constructor loads formats data from a txt file
      *
-     * @param filename the filename
-     * @param load     the load
+     * @param filename the name of the txt file from which format data are loaded
+     * @param load object of class implementing LoadFromTxt interface
      */
     public FormatRepositoryImpl(String filename, LoadFromTxt<Format> load){
         this.formats = load.load(filename);
     }
 
+    /**
+     * Retrieves all format data.
+     *
+     * @return List of format data
+     */
     @Override
     public List<Format> getAll() {
         return formats;

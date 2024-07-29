@@ -1,15 +1,17 @@
 package com.app.type;
 
 /**
- * The enum Type.
+ * Enumeration of the types of data transformations.
  */
 public enum Type {
+
     /**
-     * Transformed type.
+     * Represents the transformation in which the data has been transformed.
      */
     TRANSFORMED,
+
     /**
-     * Duplicated type.
+     * Represents the transformation in which the data has been duplicated.
      */
     DUPLICATED
 }

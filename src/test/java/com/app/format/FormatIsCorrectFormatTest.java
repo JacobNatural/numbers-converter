@@ -1,6 +1,6 @@
 package com.app.format;
 
-import com.app.formmat.Format;
+import com.app.format.Format;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

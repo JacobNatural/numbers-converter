@@ -1,6 +1,6 @@
 package com.app.format_service.impl;
 
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.formmat_service.impl.FormatServiceImpl;
 import com.app.repository.impl.FormatRepositoryImpl;
 import com.app.type.Type;

@@ -1,37 +1,29 @@
 package com.app.formmat_service;
 
-import com.app.repository.impl.FormatRepositoryImpl;
 import com.app.txt.save.SaveToTxt;
-import com.app.type.Type;
-import lombok.AllArgsConstructor;
-import lombok.ToString;
-
-import java.util.EnumMap;
-import java.util.List;
 import java.util.Map;
 
 /**
- * The interface Format service.
+ * A service interface for transforming and saving data.
  *
- * @param <T> the type parameter
- * @param <U> the type parameter
+ * @param <T> the type of data to be transformed
+ * @param <U> the type of transformed data
  */
 public interface FormatService<T, U>{
 
    /**
-    * Save transform to txt.
+    * Saves transformed data to a text file.
     *
-    * @param filename  the filename
-    * @param saveToTxt the save to txt
-    * @param t         the t
+    * @param filename the name of the file where the transformed data will be stored
+    * @param saveToTxt object of class implementing SaveToTxt interface
+    * @param t the data to be transformed and saved
     */
    void saveTransformToTxt(String filename, SaveToTxt<U> saveToTxt, T t);
 
    /**
-    * Transform map.
+    * Transforms data.
     *
-    * @return the map
+    * @return Map of transformed data. Key is of type T, value is of type U
     */
    Map<T, U> transform();
 }
-

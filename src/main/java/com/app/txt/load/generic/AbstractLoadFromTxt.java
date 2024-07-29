@@ -6,22 +6,24 @@ import com.app.txt.load.LoadFromTxt;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
-import java.util.function.Function;
 
 /**
- * The type Abstract load from txt.
+ * Abstract implementation of the LoadFromTxt interface.
  *
- * @param <T> the type parameter
+ * @param <T> the type of the data objects stored in the text file
  */
 @AllArgsConstructor
 public abstract class AbstractLoadFromTxt<T> implements LoadFromTxt<T> {
 
-    /**
-     * The Transfer txt.
-     */
     private final TransferTxt<T> transferTxt;
     private final LineParser<T> lineParser;
 
+    /**
+     * Load a list of type T objects from a text file.
+     *
+     * @param filename the name of the file to load from
+     * @return a list of loaded objects of type T
+     */
     @Override
     public List<T> load(String filename) {
         return transferTxt.read(filename,lineParser);

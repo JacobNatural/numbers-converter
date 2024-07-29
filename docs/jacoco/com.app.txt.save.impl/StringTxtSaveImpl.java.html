@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StringTxtSaveImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Numbers_converter</a> &gt; <a href="index.source.html" class="el_package">com.app.txt.save.impl</a> &gt; <span class="el_source">StringTxtSaveImpl.java</span></div><h1>StringTxtSaveImpl.java</h1><pre class="source lang-java linenums">package com.app.txt.save.impl;
+
+import com.app.txt.transfer.impl.TransferTxt;
+import com.app.txt.save.SaveToTxt;
+import com.app.txt.save.generic.AbstractSaveToTxt;
+
+/**
+ * Implementation of the SaveToTxt interface for saving String data to a text file.
+ * Extends AbstractSaveToTxt and implements SaveToTxt.
+ */
+public class StringTxtSaveImpl extends AbstractSaveToTxt&lt;String&gt; implements SaveToTxt&lt;String&gt; {
+
+    /**
+     * Constructs a StringTxtSaveImpl object with specified transferTxt.
+     *
+     * @param transferTxt Object of class implementing TransferTxt interface
+     */
+    public StringTxtSaveImpl(TransferTxt&lt;String&gt; transferTxt) {
+<span class="fc" id="L19">        super(transferTxt);</span>
+<span class="fc" id="L20">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

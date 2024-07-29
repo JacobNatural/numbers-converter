@@ -1,6 +1,6 @@
 package com.app.extension.format;
 
-import com.app.formmat.Format;
+import com.app.format.Format;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;

@@ -2,7 +2,7 @@ package com.app.txt.transfer.impl;
 
 import com.app.extension.parser.FormatLineParserExtension;
 import com.app.extension.txt.transfer.TransferTxtExtension;
-import com.app.formmat.Format;
+import com.app.format.Format;
 import com.app.parser.impl.FormatLineParser;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
