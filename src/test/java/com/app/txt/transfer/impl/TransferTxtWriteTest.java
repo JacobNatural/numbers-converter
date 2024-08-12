@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import static com.app.data_provider.Data_Provider.FILENAME_SAVE;
+import static com.app.data_provider.DataProvider.FILENAME_SAVE;
 
 @ExtendWith({TransferTxtExtension.class, FormatExtension.class})
 @RequiredArgsConstructor

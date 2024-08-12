@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 
-import static com.app.data_provider.Data_Provider.FILENAME_LOAD;
+import static com.app.data_provider.DataProvider.FILENAME_LOAD;
 
 @ExtendWith({TransferTxtExtension.class,FormatLineParserExtension.class})
 @AllArgsConstructor

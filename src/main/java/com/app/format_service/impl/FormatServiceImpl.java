@@ -1,10 +1,11 @@
-package com.app.formmat_service.impl;
+package com.app.format_service.impl;
 
-import com.app.formmat_service.FormatService;
+import com.app.format_service.FormatService;
 import com.app.repository.impl.FormatRepositoryImpl;
 import com.app.txt.save.SaveToTxt;
 import com.app.type.Type;
 import lombok.AllArgsConstructor;
+
 import java.util.*;
 
 /**
@@ -19,23 +20,23 @@ public class FormatServiceImpl implements FormatService<Type, String> {
     /**
      * Saves transformed data to a text file.
      *
-     * @param filename the name of the file where the transformed data will be stored
+     * @param filename  the name of the file where the transformed data will be stored
      * @param saveToTxt object of class implementing SaveToTxt interface
-     * @param type the type of data to save
+     * @param type      the type of data to save
      * @throws IllegalArgumentException if saveToTxt or type is null
      */
     public void saveTransformToTxt(
-            String filename, SaveToTxt<String> saveToTxt, Type type){
+            String filename, SaveToTxt<String> saveToTxt, Type type) {
 
-        if(saveToTxt == null){
+        if (saveToTxt == null) {
             throw new IllegalArgumentException("Save is null");
         }
 
-        if(type == null){
+        if (type == null) {
             throw new IllegalArgumentException("Type is null");
         }
 
-        saveToTxt.save(filename, transform().get(type),x -> x);
+        saveToTxt.save(filename, transform().get(type), x -> x);
     }
 
     /**
@@ -50,11 +51,11 @@ public class FormatServiceImpl implements FormatService<Type, String> {
         formatRepository
                 .getAll()
                 .forEach(formmat -> {
-                        transformedData.merge(
-                                formmat.isDuplicated() ? Type.DUPLICATED : Type.TRANSFORMED,
-                                formmat.transformCode(),
-                                (v1, v2) -> STR."\{v1},\{v2}"
-                        );
+                    transformedData.merge(
+                            formmat.isDuplicated() ? Type.DUPLICATED : Type.TRANSFORMED,
+                            formmat.transformCode(),
+                            (v1, v2) -> STR."\{v1},\{v2}"
+                    );
                 });
         return transformedData;
     }

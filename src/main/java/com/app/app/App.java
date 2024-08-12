@@ -1,7 +1,7 @@
 package com.app.app;
 
 import com.app.format.Format;
-import com.app.formmat_service.impl.FormatServiceImpl;
+import com.app.format_service.impl.FormatServiceImpl;
 import com.app.parser.impl.FormatLineParser;
 import com.app.repository.impl.FormatRepositoryImpl;
 import com.app.txt.transfer.impl.TransferTxt;
@@ -12,7 +12,7 @@ import com.app.validate.impl.FormatValidator;
 
 /**
  * Represents the main entry point of the application.
- *
+ * <p>
  * This class is responsible for :
  * - defining filename and format validator
  * - setting up the parser with a regular expression and the validator
@@ -28,7 +28,7 @@ public class App {
      *
      * @param args command-line arguments. No usage of command-line arguments in current implementation.
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // FILENAME
         var filename = "data.txt";
@@ -48,7 +48,7 @@ public class App {
         var stringTxtSave = new StringTxtSaveImpl(transferToTxt);
 
         // REPOSITORY
-        var formatRepository = new FormatRepositoryImpl(filename,formatTxtLoad);
+        var formatRepository = new FormatRepositoryImpl(filename, formatTxtLoad);
 
         // FORMAT SERVICE
         var formatService = new FormatServiceImpl(formatRepository);

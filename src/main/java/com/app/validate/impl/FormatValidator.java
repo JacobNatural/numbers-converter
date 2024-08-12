@@ -1,4 +1,5 @@
 package com.app.validate.impl;
+
 import com.app.format.Format;
 import com.app.validate.Validator;
 
@@ -16,7 +17,7 @@ public class FormatValidator implements Validator<Format> {
     @Override
     public String validate(Format format) {
 
-        if(!format.validateFormat()){
+        if (!format.validateFormat()) {
             return "Types are wrong";
         }
         return null;

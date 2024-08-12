@@ -8,8 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.stream.Collectors;
 
-import static com.app.data_provider.Data_Provider.CONTENT_DATA;
-import static com.app.data_provider.Data_Provider.FILENAME_SAVE;
+import static com.app.data_provider.DataProvider.CONTENT_DATA;
+import static com.app.data_provider.DataProvider.FILENAME_SAVE;
 
 public class StringTxtSaveImplTest {
 

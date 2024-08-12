@@ -25,15 +25,15 @@ public class FormatLineParser implements LineParser<Format> {
     @Override
     public Format parse(String line) {
 
-        if(line == null){
+        if (line == null) {
             throw new IllegalArgumentException("Line is null");
         }
 
-        if(line.isEmpty()){
+        if (line.isEmpty()) {
             throw new IllegalArgumentException("Line is empty");
         }
 
-        if(!line.matches(regex)){
+        if (!line.matches(regex)) {
             throw new IllegalArgumentException("Line format is invalid");
         }
 

@@ -24,10 +24,10 @@ public class Format {
      *
      * @return false if any character in the code is greater or equal to the entrySystemCode, true otherwise
      */
-    public boolean validateFormat(){
+    public boolean validateFormat() {
 
-        for(var bit : code.toCharArray()){
-            if(Character.getNumericValue(bit) >= entrySystemCode){
+        for (var bit : code.toCharArray()) {
+            if (Character.getNumericValue(bit) >= entrySystemCode) {
                 return false;
             }
         }
@@ -39,20 +39,20 @@ public class Format {
      *
      * @return true if they are equal (duplicated), false otherwise
      */
-    public boolean isDuplicated(){
+    public boolean isDuplicated() {
         return entrySystemCode == expectedSystemCode;
     }
 
     /**
      * Transforms the code from the entrySystemCode base to the expectedSystemCode base.
-     *
+     * <p>
      * If the entrySystemCode and expectedSystemCode are the same (duplicated), no transformation is done and the code is returned as it is.
      *
      * @return the transformed code
      */
-    public String transformCode(){
+    public String transformCode() {
 
-        if(isDuplicated()){
+        if (isDuplicated()) {
             return code;
         }
 

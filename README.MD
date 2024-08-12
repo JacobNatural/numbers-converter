@@ -5,56 +5,70 @@
 [![Static Badge](https://img.shields.io/badge/Coverage-100%25-flat)](https://jacobnatural.github.io/numbers_converter/jacoco/index.html)
 [![Static Badge](https://img.shields.io/badge/docs-blue)](https://jacobnatural.github.io/numbers_converter/apidocs/index.html)
 ## Overview
-This application allows conversion of numbers from a specified numerical base range `<2, 9>`
-to another numerical base. If the target base is the same as the source base,
-the application saves the code to a sep
-All components of the application are thoroughly tested using JUnit.
+This application allows the conversion of numbers from one specified numerical base (ranging from 2 to 9) 
+to another numerical base. If the target base is the same as the source base, the application saves the 
+conversion logic to a separate file. All components of the application are thoroughly tested using JUnit."
 
 ## Getting Started
 
 
 ### Prerequisites
 
-- Java Development Kit (JDK) 22
-- A Java IDE or text editor (e.g., IntelliJ IDEA, Eclipse, VSCode)
+- **Java Development Kit (JDK) 22+**
+- **Apache Maven 3.9.6+**
 
 ### Example File
 
-- Sample input data txt file format:
-
-2,4,101010  
-3,5,102211  
-6,3,1522001
-
+- Sample input data in a text file (`data.txt`) should be formatted as follows:
+```text
+2 4 101010  
+3 5 102211  
+6 3 1522001
+```
 ### Cloning the repository:
+- To clone the repository and navigate into the project directory, run:
 
 ```Bash
 git clone https://github.com/JacobNatural/numbers_converter.git
 cd numbers_converter
 ```
-### Building the project using Maven:
 
 
-```Bash
-mvn clean install
-```
 ### Running the application:
+- To build the application and run it:
 ```Bash
+mvn clean package -DskipTests
 cd target  
-java --enable-preview -jar numbers_converter-1.0.jar
+java --enable-preview -jar numbers-converter-1.0.jar
 ```
 
-  
+### Running Tests
+- To execute the tests, use the following command:
+```Bash
+mvn clean test
+```
 
 
 ### Integrate into Your Project
+- If you want to use this application as a dependency in another Maven project, 
+first install it into your local Maven repository by running:
+```Bash
+mvn clean install -DskipTests
+```
+- Then, you can add the following dependency to your pom.xml file:
 
-1. Import the necessary packages into your Java project.
-2. Utilize the classes and methods provided to handle conversions, data loading, saving, and validation within your own applications.
+```Bash
+<dependency>
+<groupId>com.app</groupId>
+<artifactId>numbers-converter</artifactId>
+<version>1.0</version>
+</dependency>
+```
+
 
 ## Contributing
 
-We welcome contributions to improve the Car Processing Application. Here's how you can contribute:
+We welcome contributions to improve the Number System Converter Application. Here's how you can contribute:
 
 1. Fork the repository on GitHub.
 2. Make enhancements or fix issues in your forked copy.

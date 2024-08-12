@@ -4,9 +4,10 @@ import java.util.List;
 
 /**
  * Interface for classes intended to serve as repositories of data objects.
+ *
  * @param <T> The type of the data objects stored in the repository.
  */
-public interface Repository <T>{
+public interface Repository<T> {
 
     /**
      * Retrieves all data objects in this repository.

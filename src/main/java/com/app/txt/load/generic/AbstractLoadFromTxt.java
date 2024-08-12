@@ -26,6 +26,6 @@ public abstract class AbstractLoadFromTxt<T> implements LoadFromTxt<T> {
      */
     @Override
     public List<T> load(String filename) {
-        return transferTxt.read(filename,lineParser);
+        return transferTxt.read(filename, lineParser);
     }
 }

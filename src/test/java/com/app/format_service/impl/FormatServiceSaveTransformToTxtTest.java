@@ -1,8 +1,7 @@
 package com.app.format_service.impl;
 
-import com.app.data_provider.Data_Provider;
+import com.app.data_provider.DataProvider;
 import com.app.format.Format;
-import com.app.formmat_service.impl.FormatServiceImpl;
 import com.app.repository.impl.FormatRepositoryImpl;
 import com.app.txt.save.impl.StringTxtSaveImpl;
 import com.app.txt.transfer.impl.TransferTxt;
@@ -80,7 +79,7 @@ public class FormatServiceSaveTransformToTxtTest {
 
         Assertions
                 .assertThatThrownBy(
-                        () -> formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, null, Type.TRANSFORMED))
+                        () -> formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, null, Type.TRANSFORMED))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Save is null");
     }
@@ -94,7 +93,7 @@ public class FormatServiceSaveTransformToTxtTest {
 
         Assertions
                 .assertThatThrownBy(
-                        () -> formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, SAVE, null))
+                        () -> formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, SAVE, null))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Type is null");
     }
@@ -109,9 +108,9 @@ public class FormatServiceSaveTransformToTxtTest {
                         new Format(3,5,"1221"),
                         new Format(4,5,"1321")));
 
-        formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, SAVE, Type.TRANSFORMED);
+        formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, SAVE, Type.TRANSFORMED);
 
-        Assertions.assertThat(Files.exists(Path.of(Data_Provider.FILENAME_SAVE)))
+        Assertions.assertThat(Files.exists(Path.of(DataProvider.FILENAME_SAVE)))
                 .isTrue();
     }
 
@@ -125,9 +124,9 @@ public class FormatServiceSaveTransformToTxtTest {
                         new Format(5,5,"1221"),
                         new Format(5,5,"1321")));
 
-        formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, SAVE, Type.DUPLICATED);
+        formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, SAVE, Type.DUPLICATED);
 
-        Assertions.assertThat(Files.exists(Path.of(Data_Provider.FILENAME_SAVE)))
+        Assertions.assertThat(Files.exists(Path.of(DataProvider.FILENAME_SAVE)))
                 .isTrue();
     }
 
@@ -143,7 +142,7 @@ public class FormatServiceSaveTransformToTxtTest {
 
         Assertions.assertThatThrownBy(
                 () -> formatService.saveTransformToTxt(
-                        Data_Provider.FILENAME_SAVE,SAVE, Type.TRANSFORMED))
+                        DataProvider.FILENAME_SAVE,SAVE, Type.TRANSFORMED))
                         .isInstanceOf(IllegalArgumentException.class)
                                 .hasMessage("T is null");
     }
@@ -160,7 +159,7 @@ public class FormatServiceSaveTransformToTxtTest {
 
         Assertions.assertThatThrownBy(
                         () -> formatService.saveTransformToTxt(
-                                Data_Provider.FILENAME_SAVE,SAVE, Type.DUPLICATED))
+                                DataProvider.FILENAME_SAVE,SAVE, Type.DUPLICATED))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("T is null");
     }
@@ -177,9 +176,9 @@ public class FormatServiceSaveTransformToTxtTest {
                         new Format(5, 5, "1321"),
                         new Format(4, 5, "1321")));
 
-        formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, SAVE, Type.DUPLICATED);
+        formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, SAVE, Type.DUPLICATED);
 
-        try (var lines = Files.lines(Path.of(Data_Provider.FILENAME_SAVE))) {
+        try (var lines = Files.lines(Path.of(DataProvider.FILENAME_SAVE))) {
             Assertions
                     .assertThat(lines.collect(Collectors.joining()))
                     .isEqualTo("1221,1321");
@@ -198,9 +197,9 @@ public class FormatServiceSaveTransformToTxtTest {
 
                         new Format(4, 5, "1321")));
 
-        formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, SAVE, Type.DUPLICATED);
+        formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, SAVE, Type.DUPLICATED);
 
-        try (var lines = Files.lines(Path.of(Data_Provider.FILENAME_SAVE))) {
+        try (var lines = Files.lines(Path.of(DataProvider.FILENAME_SAVE))) {
             Assertions
                     .assertThat(lines.collect(Collectors.joining()))
                     .isEqualTo("1221");
@@ -219,9 +218,9 @@ public class FormatServiceSaveTransformToTxtTest {
                         new Format(5, 5, "1321"),
                         new Format(5, 5, "1321")));
 
-        formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, SAVE, Type.TRANSFORMED);
+        formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, SAVE, Type.TRANSFORMED);
 
-        try (var lines = Files.lines(Path.of(Data_Provider.FILENAME_SAVE))) {
+        try (var lines = Files.lines(Path.of(DataProvider.FILENAME_SAVE))) {
             Assertions
                     .assertThat(lines.collect(Collectors.joining()))
                     .isEqualTo("202");
@@ -240,9 +239,9 @@ public class FormatServiceSaveTransformToTxtTest {
                             new Format(4,5,"1321"),
                             new Format(5,5,"1321")));
 
-            formatService.saveTransformToTxt(Data_Provider.FILENAME_SAVE, SAVE, Type.TRANSFORMED);
+            formatService.saveTransformToTxt(DataProvider.FILENAME_SAVE, SAVE, Type.TRANSFORMED);
 
-            try(var lines = Files.lines(Path.of(Data_Provider.FILENAME_SAVE))){
+            try(var lines = Files.lines(Path.of(DataProvider.FILENAME_SAVE))){
                 Assertions
                         .assertThat(lines.collect(Collectors.joining()))
                         .isEqualTo("202,441");
@@ -253,7 +252,7 @@ public class FormatServiceSaveTransformToTxtTest {
     @SneakyThrows
     public void cleanData(){
 
-        var path = Path.of(Data_Provider.FILENAME_SAVE);
+        var path = Path.of(DataProvider.FILENAME_SAVE);
         if(Files.exists(path)){
             Files.delete(path);
         }

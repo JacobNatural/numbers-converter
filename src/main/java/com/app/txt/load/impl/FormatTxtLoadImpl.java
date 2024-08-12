@@ -16,7 +16,7 @@ public class FormatTxtLoadImpl extends AbstractLoadFromTxt<Format> implements Lo
      * Constructs an FormatTxtLoadImpl object with the specified transferTxt and lineParser.
      *
      * @param transferTxt Object of class implementing TransferTxt interface
-     * @param lineParser Object of class implementing LineParser interface
+     * @param lineParser  Object of class implementing LineParser interface
      */
     public FormatTxtLoadImpl(TransferTxt<Format> transferTxt, LineParser<Format> lineParser) {
         super(transferTxt, lineParser);

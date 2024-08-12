@@ -17,9 +17,9 @@ public class FormatRepositoryImpl implements Repository<Format> {
      * Constructor loads formats data from a txt file
      *
      * @param filename the name of the txt file from which format data are loaded
-     * @param load object of class implementing LoadFromTxt interface
+     * @param load     object of class implementing LoadFromTxt interface
      */
-    public FormatRepositoryImpl(String filename, LoadFromTxt<Format> load){
+    public FormatRepositoryImpl(String filename, LoadFromTxt<Format> load) {
         this.formats = load.load(filename);
     }
 

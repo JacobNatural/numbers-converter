@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Format.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Numbers_converter</a> &gt; <a href="index.source.html" class="el_package">com.app.format</a> &gt; <span class="el_source">Format.java</span></div><h1>Format.java</h1><pre class="source lang-java linenums">package com.app.format;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Format.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">numbers-converter</a> &gt; <a href="index.source.html" class="el_package">com.app.format</a> &gt; <span class="el_source">Format.java</span></div><h1>Format.java</h1><pre class="source lang-java linenums">package com.app.format;
 
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
@@ -24,10 +24,10 @@ public class Format {
      *
      * @return false if any character in the code is greater or equal to the entrySystemCode, true otherwise
      */
-    public boolean validateFormat(){
+    public boolean validateFormat() {
 
-<span class="fc bfc" id="L29" title="All 2 branches covered.">        for(var bit : code.toCharArray()){</span>
-<span class="fc bfc" id="L30" title="All 2 branches covered.">            if(Character.getNumericValue(bit) &gt;= entrySystemCode){</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (var bit : code.toCharArray()) {</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (Character.getNumericValue(bit) &gt;= entrySystemCode) {</span>
 <span class="fc" id="L31">                return false;</span>
             }
         }
@@ -39,20 +39,20 @@ public class Format {
      *
      * @return true if they are equal (duplicated), false otherwise
      */
-    public boolean isDuplicated(){
+    public boolean isDuplicated() {
 <span class="fc bfc" id="L43" title="All 2 branches covered.">        return entrySystemCode == expectedSystemCode;</span>
     }
 
     /**
      * Transforms the code from the entrySystemCode base to the expectedSystemCode base.
-     *
+     * &lt;p&gt;
      * If the entrySystemCode and expectedSystemCode are the same (duplicated), no transformation is done and the code is returned as it is.
      *
      * @return the transformed code
      */
-    public String transformCode(){
+    public String transformCode() {
 
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        if(isDuplicated()){</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (isDuplicated()) {</span>
 <span class="fc" id="L56">            return code;</span>
         }
 

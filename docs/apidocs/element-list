@@ -1,7 +1,7 @@
 com.app.app
 com.app.format
-com.app.formmat_service
-com.app.formmat_service.impl
+com.app.format_service
+com.app.format_service.impl
 com.app.parser
 com.app.parser.impl
 com.app.repository
