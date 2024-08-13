@@ -30,8 +30,8 @@ conversion logic to a separate file. All components of the application are thoro
 - To clone the repository and navigate into the project directory, run:
 
 ```bash
-git clone https://github.com/JacobNatural/numbers_converter.git
-cd numbers_converter
+git clone https://github.com/JacobNatural/numbers-converter.git
+cd numbers-converter
 ```
 
 
