@@ -7,7 +7,7 @@
 ## Overview
 This application allows the conversion of numbers from one specified numerical base (ranging from 2 to 9) 
 to another numerical base. If the target base is the same as the source base, the application saves the 
-conversion logic to a separate file. All components of the application are thoroughly tested using JUnit."
+conversion logic to a separate file. All components of the application are thoroughly tested using JUnit.
 
 ## Getting Started
 
@@ -21,6 +21,7 @@ conversion logic to a separate file. All components of the application are thoro
 
 - Sample input data in a text file (`data.txt`) should be formatted as follows:
 ```text
+# The format is: <source_base> <target_base> <number_in_source_base>
 2 4 101010  
 3 5 102211  
 6 3 1522001
@@ -28,7 +29,7 @@ conversion logic to a separate file. All components of the application are thoro
 ### Cloning the repository:
 - To clone the repository and navigate into the project directory, run:
 
-```Bash
+```bash
 git clone https://github.com/JacobNatural/numbers_converter.git
 cd numbers_converter
 ```
@@ -36,7 +37,7 @@ cd numbers_converter
 
 ### Running the application:
 - To build the application and run it:
-```Bash
+```bash
 mvn clean package -DskipTests
 cd target  
 java --enable-preview -jar numbers-converter-1.0.jar
@@ -44,7 +45,7 @@ java --enable-preview -jar numbers-converter-1.0.jar
 
 ### Running Tests
 - To execute the tests, use the following command:
-```Bash
+```bash
 mvn clean test
 ```
 
@@ -52,16 +53,16 @@ mvn clean test
 ### Integrate into Your Project
 - If you want to use this application as a dependency in another Maven project, 
 first install it into your local Maven repository by running:
-```Bash
+```bash
 mvn clean install -DskipTests
 ```
 - Then, you can add the following dependency to your pom.xml file:
 
-```Bash
+```xml
 <dependency>
-<groupId>com.app</groupId>
-<artifactId>numbers-converter</artifactId>
-<version>1.0</version>
+    <groupId>com.app</groupId>
+    <artifactId>numbers-converter</artifactId>
+    <version>1.0</version>
 </dependency>
 ```
 
