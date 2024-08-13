@@ -2,8 +2,8 @@
 # Number System Converter Application
 
 ![Static Badge](https://img.shields.io/badge/Build-passing-flat)
-[![Static Badge](https://img.shields.io/badge/Coverage-100%25-flat)](https://jacobnatural.github.io/numbers_converter/jacoco/index.html)
-[![Static Badge](https://img.shields.io/badge/docs-blue)](https://jacobnatural.github.io/numbers_converter/apidocs/index.html)
+[![Static Badge](https://img.shields.io/badge/Coverage-100%25-flat)](https://jacobnatural.github.io/numbers-converter/jacoco/index.html)
+[![Static Badge](https://img.shields.io/badge/docs-blue)](https://jacobnatural.github.io/numbers-converter/apidocs/index.html)
 ## Overview
 This application allows the conversion of numbers from one specified numerical base (ranging from 2 to 9) 
 to another numerical base. If the target base is the same as the source base, the application saves the 
